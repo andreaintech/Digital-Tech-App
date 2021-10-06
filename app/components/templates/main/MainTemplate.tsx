@@ -12,8 +12,8 @@ const MainTemplate = ({ children }: MainTemplateType) => {
             </View>
             <View style={{
                 flex: 1,
-                backgroundColor: 'blue',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginHorizontal: 20,
             }}>
                 {children}
             </View>

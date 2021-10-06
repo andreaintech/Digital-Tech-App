@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from 'react-native'
+
 export interface MainTemplateType {
     children: React.ReactNode
 }
@@ -6,6 +8,6 @@ export interface OtherType {
     hola: string
 }
 
-// export default {
-//     MainTemplateType
-// }
+export interface SimpleAvatarProps {
+    image: ImageSourcePropType
+}
