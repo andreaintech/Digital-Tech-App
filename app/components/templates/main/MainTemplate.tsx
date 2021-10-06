@@ -7,7 +7,7 @@ const MainTemplate = ({ children }: MainTemplateType) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar hidden />
-            <View style={{ flex: 0.1, backgroundColor: 'red' }}>
+            <View style={{ flex: 0.1, }}>
 
             </View>
             <View style={{
@@ -17,7 +17,7 @@ const MainTemplate = ({ children }: MainTemplateType) => {
             }}>
                 {children}
             </View>
-            <View style={{ flex: 0.1, backgroundColor: 'yellow' }}>
+            <View style={{ flex: 0.1, }}>
 
             </View>
         </SafeAreaView>
