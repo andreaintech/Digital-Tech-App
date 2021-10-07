@@ -1,47 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, Image, ImageSourcePropType } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image } from 'react-native';
 import { SimpleAvatar } from '../../atoms/avatars';
-import { TitleAndSubtitle } from '../../molecules/labels';
-import { SHADOW } from '../../../styles/commons/shadows';
-import { SIZES, COLORS, FONTS } from '../../../styles/BaseTheme';
+import { PostDayInfo, PostHoursInfo, TitleAndSubtitle } from '../../molecules/labels';
 import { LikedInfo } from './';
 import { PostText } from '../../atoms/labels';
+import { Post as PostProps } from '../../../types';
+import { styles as postStyles } from './styles';
 
-interface Props {
-    liked?: boolean
-    username?: string
-    image?: ImageSourcePropType
-}
 const Post = ({
-    liked = true,
-    username,
-    image,
-}: Props) => {
+    image = null,
+    message,
+    likes = [],
+    author,
+    create_at,
+    location,
+    status,
+}: PostProps) => {
     const firstUserLiked = '@aanng'
-    const [likedPost, setLikedPost] = useState<boolean>(liked);
+    const [likedPost, setLikedPost] = useState<boolean>(false);
+
+    console.log('------- image: ', image)
 
     const likeAction = () => {
         setLikedPost(!likedPost)
     }
 
     return (
-        <View style={{
-            width: '100%',
-            height: '100%',
-            marginVertical: '2%',
-            paddingHorizontal: '4%',
-            paddingVertical: '2%',
-            backgroundColor: COLORS.WHITE,
-            flex: 0.3,
-            borderRadius: 20,
-            minWidth: 350,
-            minHeight: 40,
-            borderRightColor: COLORS.PRIMARY,
-            borderRightWidth: 1,
-            borderBottomColor: COLORS.QUINARY,
-            borderBottomWidth: 1,
-            ...SHADOW,
-        }}>
+        <View style={postStyles.postContainer}>
             <View style={{
                 flexDirection: 'row',
             }}>
@@ -54,28 +39,8 @@ const Post = ({
                     subtitle={'@shanepriscila'}
                 />
 
-                {image === '' &&
-                    <>
-                        <View
-                            style={{
-                                justifyContent: 'center',
-                                alignSelf: 'center',
-                                marginBottom: '8%',
-                                marginLeft: '1%',
-                                width: 5,
-                                height: 5,
-                                borderRadius: 5,
-                                backgroundColor: COLORS.BLACK
-                            }}
-                        />
-                        <Text style={{
-                            fontFamily: FONTS.FONT_FAMILY_REGULAR,
-                            paddingLeft: '1%',
-                            paddingTop: '3%',
-                        }}>
-                            1d
-                        </Text>
-                    </>
+                {image === null &&
+                    <PostDayInfo />
                 }
             </View>
 
@@ -98,14 +63,8 @@ const Post = ({
                 firstUserLiked={firstUserLiked}
             />
 
-            {image === '' ||
-                <Text style={{
-                    fontFamily: FONTS.FONT_FAMILY_REGULAR,
-                    fontSize: SIZES.BASE,
-                    paddingTop: '1%'
-                }}>
-                    HACE 10 HORAS
-                </Text>
+            {image === null ||
+                <PostHoursInfo />
             }
         </View>
     )
