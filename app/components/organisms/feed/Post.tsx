@@ -57,6 +57,7 @@ const Post = ({
             />
 
             <LikedInfo
+                likes={likes}
                 likeAction={likeAction}
                 likedPost={likedPost}
                 firstUserLiked={firstUserLiked}
