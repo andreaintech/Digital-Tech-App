@@ -9,7 +9,6 @@ interface Props {
     likes: Array<User>
     likeAction: () => void
     likedPost: boolean
-    firstUserLiked: string
 }
 
 const LikedInfo = ({

@@ -12,6 +12,9 @@ const SimpleAvatar = ({
         width,
         height,
     }
+
+    console.log('avatar image is: ', image)
+    console.log('typeof avatar image is: ', typeof image)
     return (
         <Image
             style={[styles.avatar, avatarStyles]}

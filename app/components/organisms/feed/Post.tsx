@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
 import { SimpleAvatar } from '../../atoms/avatars';
-import { PostDayInfo, PostHoursInfo, TitleAndSubtitle } from '../../molecules/labels';
+import { PostHoursInfo, TitleAndSubtitle } from '../../molecules/labels';
 import { LikedInfo } from './';
 import { PostText } from '../../atoms/labels';
 import { Post as PostProps } from '../../../types';
 import { styles as postStyles } from './styles';
+import { ImagePost } from '../../atoms/images';
 
 const Post = ({
     image = null,
@@ -16,7 +17,6 @@ const Post = ({
     location,
     status,
 }: PostProps) => {
-    const firstUserLiked = '@aanng'
     const [likedPost, setLikedPost] = useState<boolean>(false);
 
     const likeAction = () => {
@@ -39,14 +39,9 @@ const Post = ({
                 />
             </View>
 
-            {image &&
-                <Image
-                    style={{
-                        width: 320,
-                        height: 200,
-                        marginTop: '1%'
-                    }}
-                    source={image}
+            {image !== '' &&
+                <ImagePost
+                    image={image}
                 />
             }
 
@@ -58,10 +53,9 @@ const Post = ({
                 likes={likes}
                 likeAction={likeAction}
                 likedPost={likedPost}
-                firstUserLiked={firstUserLiked}
             />
 
-            {image === null ||
+            {image === '' ||
                 <PostHoursInfo />
             }
         </View>

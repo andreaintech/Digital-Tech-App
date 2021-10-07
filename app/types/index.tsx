@@ -18,6 +18,9 @@ export interface Post {
     status: 'drafted' | 'deleted' | 'published';
 }
 
+export interface Data {
+    posts: Array<Post>;
+}
 
 //* Components (templates)
 export interface MainTemplateType {
