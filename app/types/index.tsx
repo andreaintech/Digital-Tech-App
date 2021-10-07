@@ -9,7 +9,7 @@ export interface User {
 }
 
 export interface Post {
-    image?: ImageSourcePropType | null;
+    image?: ImageSourcePropType | null | string;
     likes?: Array<User>;
     message: string;
     author: User;

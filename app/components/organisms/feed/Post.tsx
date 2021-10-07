@@ -19,8 +19,6 @@ const Post = ({
     const firstUserLiked = '@aanng'
     const [likedPost, setLikedPost] = useState<boolean>(false);
 
-    console.log('------- image: ', image)
-
     const likeAction = () => {
         setLikedPost(!likedPost)
     }
