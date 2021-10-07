@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { FONTS, SIZES } from '../../../styles/BaseTheme';
+import { PostTextProps } from '../../../types';
 
-const PostText = () => {
+const PostText = ({
+    message
+}: PostTextProps) => {
     return (
         <View style={{
             flex: 1.7,
@@ -15,8 +18,7 @@ const PostText = () => {
                 textAlign: 'justify',
                 paddingTop: '2%'
             }}>
-                It is a long established fact that a reader will be
-                distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                {message}
             </Text>
         </View>
     )

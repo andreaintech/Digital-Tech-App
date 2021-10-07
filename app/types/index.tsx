@@ -1,5 +1,6 @@
 import { ImageSourcePropType } from 'react-native'
 
+//* Data structure
 export interface User {
     avatar?: string;
     username: string;
@@ -17,23 +18,30 @@ export interface Post {
     status: 'drafted' | 'deleted' | 'published';
 }
 
+
+//* Components (templates)
 export interface MainTemplateType {
     children: React.ReactNode
 }
 
-export interface OtherType {
-    children: React.ReactNode
-    hola: string
+
+//* Components (organisms)
+export interface PostTextProps {
+    message: string
 }
 
-export interface SimpleAvatarProps {
-    image: ImageSourcePropType
-    width?: number
-    height?: number
-}
 
+//* Components (molecules)
 export interface TitleAndSubtitleProps {
     title: string
     subtitle: string
     isVerified?: boolean
+}
+
+
+//* Components (atoms)
+export interface SimpleAvatarProps {
+    image: ImageSourcePropType
+    width?: number
+    height?: number
 }

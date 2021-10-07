@@ -55,7 +55,9 @@ const Post = ({
                 />
             }
 
-            <PostText />
+            <PostText
+                message={message}
+            />
 
             <LikedInfo
                 likeAction={likeAction}
