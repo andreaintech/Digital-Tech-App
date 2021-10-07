@@ -10,4 +10,12 @@ export interface OtherType {
 
 export interface SimpleAvatarProps {
     image: ImageSourcePropType
+    width?: number
+    height?: number
+}
+
+export interface TitleAndSubtitleProps {
+    title: string
+    subtitle: string
+    isVerified?: boolean
 }

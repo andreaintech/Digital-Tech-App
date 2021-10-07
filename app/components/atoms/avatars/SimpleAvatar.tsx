@@ -1,14 +1,20 @@
 import React from 'react'
 import { Image } from 'react-native'
-import { SimpleAvatarProps } from '../../../types';
+import { SimpleAvatarProps as Props } from '../../../types';
 import { styles } from './styles';
 
 const SimpleAvatar = ({
-    image
-}: SimpleAvatarProps) => {
+    image,
+    width = 60,
+    height = 60
+}: Props) => {
+    const avatarStyles = {
+        width,
+        height,
+    }
     return (
         <Image
-            style={styles.avatar}
+            style={[styles.avatar, avatarStyles]}
             source={image}
         />
     )

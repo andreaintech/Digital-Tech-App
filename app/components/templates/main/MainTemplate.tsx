@@ -1,9 +1,9 @@
 import React from 'react'
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MainTemplateType } from '../../../types';
+import { MainTemplateType as Props } from '../../../types';
 
-const MainTemplate = ({ children }: MainTemplateType) => {
+const MainTemplate = ({ children }: Props) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar hidden />
