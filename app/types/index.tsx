@@ -2,7 +2,7 @@ import { ImageSourcePropType } from 'react-native'
 
 //* Data structure
 export interface User {
-    avatar?: string;
+    avatar?: ImageSourcePropType | null | string;
     username: string;
     name: string;
     surname: string;
@@ -33,15 +33,16 @@ export interface PostTextProps {
 
 //* Components (molecules)
 export interface TitleAndSubtitleProps {
-    title: string
-    subtitle: string
+    image?: boolean
+    nameAndSurname: string
+    username: string
     isVerified?: boolean
 }
 
 
 //* Components (atoms)
 export interface SimpleAvatarProps {
-    image: ImageSourcePropType
+    image?: ImageSourcePropType | null | string
     width?: number
     height?: number
 }

@@ -31,17 +31,14 @@ const Post = ({
                 flexDirection: 'row',
             }}>
                 <SimpleAvatar
-                    image={require('../../../../assets/images/avatars/1.jpg')}
+                    image={author.avatar}
                 />
                 <TitleAndSubtitle
+                    image={image === null}
                     isVerified
-                    title={'Priscila Shane'}
-                    subtitle={'@shanepriscila'}
+                    nameAndSurname={`${author.name} ${author.surname}`}
+                    username={`@${author.username}`}
                 />
-
-                {image === null &&
-                    <PostDayInfo />
-                }
             </View>
 
             {image &&

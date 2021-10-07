@@ -1,10 +1,10 @@
-import React from 'react'
-import { Image } from 'react-native'
+import React from 'react';
+import { Image } from 'react-native';
 import { SimpleAvatarProps as Props } from '../../../types';
 import { styles } from './styles';
 
 const SimpleAvatar = ({
-    image,
+    image = null,
     width = 60,
     height = 60
 }: Props) => {
@@ -15,7 +15,7 @@ const SimpleAvatar = ({
     return (
         <Image
             style={[styles.avatar, avatarStyles]}
-            source={image}
+            source={image ? image : require('../../../../assets/images/avatars/avatar.png')}
         />
     )
 }

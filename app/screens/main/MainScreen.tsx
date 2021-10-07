@@ -32,6 +32,7 @@ const MainScreen = () => {
                         username: 'fdasilva',
                         name: 'Fabiana',
                         surname: 'Da Silva',
+                        avatar: require('../../../assets/images/avatars/1.jpg')
                     }}
                     create_at={new Date()}
                     location={'Trigal'}
@@ -43,6 +44,7 @@ const MainScreen = () => {
                         username: 'adasilvapdev',
                         name: 'Andrea',
                         surname: 'Da Silva',
+                        // avatar: require('../../../assets/images/avatars/2.jpg')
                     }}
                     create_at={new Date()}
                     location={'Valencia'}

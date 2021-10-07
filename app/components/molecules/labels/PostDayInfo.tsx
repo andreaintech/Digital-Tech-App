@@ -4,13 +4,13 @@ import { COLORS, FONTS } from '../../../styles/BaseTheme';
 
 const PostDayInfo = () => {
     return (
-        <>
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
             <View
                 style={{
                     justifyContent: 'center',
                     alignSelf: 'center',
-                    marginBottom: '8%',
-                    marginLeft: '1%',
+                    // marginBottom: '4%',
+                    marginLeft: '15%',
                     width: 5,
                     height: 5,
                     borderRadius: 5,
@@ -19,12 +19,12 @@ const PostDayInfo = () => {
             />
             <Text style={{
                 fontFamily: FONTS.FONT_FAMILY_REGULAR,
-                paddingLeft: '1%',
-                paddingTop: '3%',
+                paddingLeft: '2%',
+                // paddingTop: '3%',
             }}>
                 1d
             </Text>
-        </>
+        </View>
     )
 }
 
