@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image, ImageSourcePropType } from 'react-native';
 import { SimpleAvatar } from '../../atoms/avatars';
 import { TitleAndSubtitle } from '../../molecules/labels';
 import { SHADOW } from '../../../styles/commons/shadows';
@@ -10,12 +10,12 @@ import { PostText } from '../../atoms/labels';
 interface Props {
     liked?: boolean
     username?: string
-    image?: string
+    image?: ImageSourcePropType
 }
 const Post = ({
     liked = true,
     username,
-    image = ''
+    image,
 }: Props) => {
     const firstUserLiked = '@aanng'
     const [likedPost, setLikedPost] = useState<boolean>(liked);
@@ -78,6 +78,17 @@ const Post = ({
                     </>
                 }
             </View>
+
+            {image &&
+                <Image
+                    style={{
+                        width: 320,
+                        height: 200,
+                        marginTop: '1%'
+                    }}
+                    source={image}
+                />
+            }
 
             <PostText />
 

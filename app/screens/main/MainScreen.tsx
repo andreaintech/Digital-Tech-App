@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { MainTemplate } from '../../components/templates/main';
 import { Post } from '../../components/organisms/feed';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const MainScreen = () => {
     return (
         <MainTemplate>
-            <Post />
-            <Post image='hola' />
+            <ScrollView>
+
+                <Post />
+                <Post image={require('../../../assets/images/avatars/6.jpg')} />
+
+            </ScrollView>
         </MainTemplate>
     )
 }
