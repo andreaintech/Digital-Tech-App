@@ -43,9 +43,47 @@ export const useUser = () => {
     * @param {string} username - The user's username
     * @returns {void}
     */
-    const login = (): void => {
+    const login = async (user: User) => {
+        console.log('-------------- user: ', user);
+        if (user) {
+            AsyncStorage.setItem("currentUser", JSON.stringify({
+                name: 'aja',
+                username: user,
+                surname: 'aja',
+                avatar: 'aja',
+            }))
+            setCurrentUser({
+                name: 'aja',
+                username: user,
+                surname: 'aja',
+                avatar: 'aja',
+            })
+
+            console.log('current user changed: ', currentUser)
+            // .then((response: string | null) => {
+            //     console.log(response)
+            //     if (response !== null)
+            //         setCurrentUser(JSON.parse(response))
+            // })
+            // .catch((error: Error) => console.log('[ERR] : useUser getItem currentUser: ', error))
+        } else {
+            console.log('[ERR] : useUser login: user is null')
+        }
+    }
+
+    /**
+    * //* isUserLoggedIn
+    //? Verifies if user is logged in
+    *
+    * @method
+    * @param {string} username - The user's username
+    * @returns {boolean}
+    */
+    const isUserLoggedIn = (): void => {
 
     }
+
+
 
     /**
     * //* logOut
@@ -122,6 +160,7 @@ export const useUser = () => {
         logOut,
         onChangePostLike,
         isPostLiked,
-        userExists
+        userExists,
+        isUserLoggedIn,
     }
 }

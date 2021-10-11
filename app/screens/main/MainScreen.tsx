@@ -22,10 +22,10 @@ const MainScreen = () => {
     return (
         <MainTemplate>
             <FlatList
-                style={{ borderWidth: 1, borderColor: 'pink' }}
+                style={{}}
                 data={POSTS}
                 keyExtractor={(item) => String(item.author.username)}
-                contentContainerStyle={{ borderWidth: 1, borderColor: 'green' }}
+                contentContainerStyle={{}}
                 renderItem={renderItem}
             />
         </MainTemplate>
