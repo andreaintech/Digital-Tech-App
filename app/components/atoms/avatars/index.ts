@@ -1,0 +1,1 @@
+export { default as SimpleAvatar } from './SimpleAvatar';
